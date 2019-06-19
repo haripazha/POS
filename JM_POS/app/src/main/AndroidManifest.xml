@@ -106,8 +106,14 @@
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.Fullscreen" />
 
-        <!--- Sales Report -->
-        <activity android:name=".reports.summary_sales.summary_sales"
+        <!-- - Sales Report -->
+        <activity
+            android:name=".reports.summary_sales.summary_sales"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.Fullscreen" />
+
+        <!-- Sales Report generate reportSales-->
+        <activity android:name=".reports.summary_sales.generate_reportSales.generate_reportSales"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.Fullscreen"
             ></activity>
