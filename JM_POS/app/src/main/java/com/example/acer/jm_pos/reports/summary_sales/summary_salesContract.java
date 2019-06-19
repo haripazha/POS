@@ -13,6 +13,8 @@ public interface summary_salesContract {
         void showDateDialogEndDate();
 
         void storedDateSearchFilter(String start_date,String end_date);
+        void storedFilteredStartDate(String month,String day,String year);
+        void storedFilteredEndDate(String month,String day, String year);
 
     }
 }

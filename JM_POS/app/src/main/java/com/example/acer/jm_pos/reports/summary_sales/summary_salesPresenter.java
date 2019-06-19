@@ -9,10 +9,22 @@ import android.widget.DatePicker;
 
 import com.example.acer.jm_pos.reports.reports_fragment;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class summary_salesPresenter implements summary_salesContract.summary_presenter {
     //Mvp declaration
     summary_salesContract.summary_view mView;
     Context context;
+
+
+    //object declaration
+
+
+    //variable declaration
+    int month = 0;
+    int day = 0;
+    int year = 0;
 
 
     summary_salesPresenter(summary_salesContract.summary_view view){
@@ -26,26 +38,36 @@ public class summary_salesPresenter implements summary_salesContract.summary_pre
     @Override
     public void showDateDialog() {
         Log.d("date_s","clicled");
+
+        //generate date
+        generateDate();
+
+        //show date picker dialog
         DatePickerDialog datePickerDialog = new DatePickerDialog(context,
                 new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                        mView.populateStartDate(String.valueOf(month),String.valueOf(day),String.valueOf(year));
+                        mView.populateStartDate(String.valueOf(month+1),String.valueOf(day),String.valueOf(year));
                     }
-                }, 2019, 06, 19);
+                }, year, month-1, day);
         datePickerDialog.show();
     }
 
     @Override
     public void showDateDialogEndDate() {
         Log.d("date_s","clicled");
+
+        //This generate current time
+        generateDate();
+
+        //show date picker dialog
         DatePickerDialog datePickerDialog = new DatePickerDialog(context,
                 new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                        mView.populateEndDate(String.valueOf(month),String.valueOf(day),String.valueOf(year));
+                        mView.populateEndDate(String.valueOf(month+1),String.valueOf(day),String.valueOf(year));
                     }
-                }, 2019, 06, 19);
+                }, year, month-1, day);
         datePickerDialog.show();
     }
 
@@ -61,5 +83,47 @@ public class summary_salesPresenter implements summary_salesContract.summary_pre
 
         //go To generate Report
         mView.generateReport();
+    }
+
+    @Override
+    public void storedFilteredStartDate(String month, String day, String year) {
+
+        //Storing the start_date
+        SharedPreferences store_user_id = context.getSharedPreferences("sales_filter_date", Context.MODE_PRIVATE);
+        SharedPreferences.Editor store_username_editor = store_user_id.edit();
+        store_username_editor.putString("start_day",day);
+        store_username_editor.putString("start_month",month);
+        store_username_editor.putString("start_year",year);
+        store_username_editor.commit();
+
+    }
+
+    @Override
+    public void storedFilteredEndDate(String month, String day, String year) {
+
+        //Storing the end_date
+        SharedPreferences store_user_id = context.getSharedPreferences("sales_filter_date", Context.MODE_PRIVATE);
+        SharedPreferences.Editor store_username_editor = store_user_id.edit();
+        store_username_editor.putString("end_day",day);
+        store_username_editor.putString("end_month",month);
+        store_username_editor.putString("end_year",year);
+        store_username_editor.commit();
+    }
+
+    //Generate date
+    public void generateDate(){
+
+        //This generate current time
+        SimpleDateFormat day_format = new SimpleDateFormat("dd");
+        day = Integer.parseInt(day_format.format(new Date()));
+
+        //This generate current time
+        SimpleDateFormat month_format = new SimpleDateFormat("M");
+        month = Integer.parseInt(month_format.format(new Date()));
+
+        //This generate current time
+        SimpleDateFormat year_format = new SimpleDateFormat("yyyy");
+        year = Integer.parseInt(year_format.format(new Date()));
+
     }
 }

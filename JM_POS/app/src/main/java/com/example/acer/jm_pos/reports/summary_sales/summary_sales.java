@@ -1,7 +1,9 @@
 package com.example.acer.jm_pos.reports.summary_sales;
 
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,6 +27,7 @@ public class summary_sales extends AppCompatActivity implements summary_salesCon
     EditText start_date;
     EditText end_date;
     Button generate_sales_report;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,14 +86,23 @@ public class summary_sales extends AppCompatActivity implements summary_salesCon
     @Override
     public void populateStartDate(String month, String day, String year) {
 
+        //populate the edittext of date
         start_date.setText(month+"/"+day+"/"+year);
+
+
+        //stored the date start date details
+        presenter.storedFilteredStartDate(month,day,year);
+
     }
 
     @Override
     public void populateEndDate(String month, String day, String year) {
 
+        //populate the edittext of date
         end_date.setText(month+"/"+day+"/"+year);
 
+        //stored the date end date details
+        presenter.storedFilteredEndDate(month,day,year);
     }
 
     @Override
