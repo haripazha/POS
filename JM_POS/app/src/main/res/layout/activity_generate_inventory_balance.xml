@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".reports.item_inventory.generate_inventoryBalance.generate_inventoryBalance">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#242f39"
+            android:gravity="left"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/back_button"
+                android:layout_width="41dp"
+                android:layout_height="25dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="19dp"
+                app:srcCompat="@drawable/back_button" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Inventory Balance"
+                android:textColor="#FFF"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Inventory Balance"
+                    android:textColor="#505050"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="17dp"/>
+
+                <TextView
+                    android:id="@+id/company_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Company: "
+                    android:textColor="#505050"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/user"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:gravity="left"
+                        android:textColor="#505050"
+                        android:text="User: Admin" />
+
+                    <TextView
+                        android:id="@+id/date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:gravity="right"
+                        android:textColor="#505050"
+                        android:text="Date: 6/20/2019" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#000"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:background="#3c3c3c"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".2"
+                        android:textColor="#FFF"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="Inventory ID" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".2"
+                        android:textColor="#FFF"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="Item Name" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".2"
+                        android:textColor="#FFF"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="Price" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".2"
+                        android:textColor="#FFF"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="UOM" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".2"
+                        android:textColor="#FFF"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="Available" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/inventory_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".2"
+                        android:textColor="#414141"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="Inventory ID" />
+
+                    <TextView
+                        android:id="@+id/item_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".2"
+                        android:textColor="#414141"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="Item Name" />
+
+                    <TextView
+                        android:id="@+id/item_price"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".2"
+                        android:textColor="#414141"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="Price" />
+
+                    <TextView
+                        android:id="@+id/uom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".2"
+                        android:textColor="#414141"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="UOM" />
+
+                    <TextView
+                        android:id="@+id/stocks"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".2"
+                        android:textColor="#414141"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="Available" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

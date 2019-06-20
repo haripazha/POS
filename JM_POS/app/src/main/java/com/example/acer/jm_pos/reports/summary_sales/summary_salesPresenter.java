@@ -1,7 +1,9 @@
 package com.example.acer.jm_pos.reports.summary_sales;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.util.Log;
@@ -108,6 +110,34 @@ public class summary_salesPresenter implements summary_salesContract.summary_pre
         store_username_editor.putString("end_month",month);
         store_username_editor.putString("end_year",year);
         store_username_editor.commit();
+    }
+
+    @Override
+    public void startAndEnd_validationAlert() {
+
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(context);
+        builder1.setTitle("Prompt");
+        builder1.setMessage("Please select Start and End Date!");
+        builder1.setCancelable(true);
+
+        builder1.setPositiveButton(
+                "Ok",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        builder1.setNegativeButton(
+                "",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        AlertDialog alert11 = builder1.create();
+        alert11.show();
     }
 
     //Generate date

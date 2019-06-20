@@ -3,6 +3,7 @@ package com.example.acer.jm_pos.reports;
 import android.content.Context;
 import android.content.Intent;
 
+import com.example.acer.jm_pos.reports.item_inventory.item_inventory;
 import com.example.acer.jm_pos.reports.summary_sales.summary_sales;
 import com.example.acer.jm_pos.reports.top_products.top_products;
 
@@ -31,5 +32,12 @@ public class report_presenter implements report_contract.report_presenter {
         intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         context.startActivity(intent);
 
+    }
+
+    @Override
+    public void to_itemInventory(Context context) {
+        Intent intent = new Intent(context,item_inventory.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        context.startActivity(intent);
     }
 }

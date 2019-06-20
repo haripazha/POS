@@ -112,8 +112,20 @@
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.Fullscreen" />
 
-        <!-- Sales Report generate reportSales-->
-        <activity android:name=".reports.summary_sales.generate_reportSales.generate_reportSales"
+        <!-- Sales Report generate reportSales -->
+        <activity
+            android:name=".reports.summary_sales.generate_reportSales.generate_reportSales"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.Fullscreen" />
+
+        <!-- Reports item_inventory -->
+        <activity
+            android:name=".reports.item_inventory.item_inventory"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.Fullscreen" />
+
+        <!-- Reports generate inventoryBalance -->
+        <activity android:name=".reports.item_inventory.generate_inventoryBalance.generate_inventoryBalance"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.Fullscreen"
             ></activity>

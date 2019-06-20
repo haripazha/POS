@@ -113,11 +113,11 @@ public class reports_fragment extends Fragment implements report_contract.report
             }
         });
 
-        //
+        //go to item_inventory
         item_stock_inventory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                presenter.to_itemInventory(getContext());
             }
         });
     }

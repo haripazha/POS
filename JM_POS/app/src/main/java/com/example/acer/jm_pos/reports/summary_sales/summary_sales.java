@@ -75,12 +75,26 @@ public class summary_sales extends AppCompatActivity implements summary_salesCon
             }
         });
 
+
+        //proceed the process
         generate_sales_report.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                presenter.storedDateSearchFilter(start_date.getText().toString(),end_date.getText().toString());
+
+                //condition if start date and end date is empty
+                if(!start_date.getText().toString().equals("")&&!end_date.getText().toString().equals("")){
+                    presenter.storedDateSearchFilter(start_date.getText().toString(),end_date.getText().toString());
+                }else{
+
+                    //show alert dialog
+                    presenter.startAndEnd_validationAlert();
+                }
             }
         });
+
+
+
+
     }
 
     @Override

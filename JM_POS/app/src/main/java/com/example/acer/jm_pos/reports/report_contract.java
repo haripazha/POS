@@ -10,5 +10,7 @@ public interface report_contract {
     interface report_presenter{
         void top_products(Context context);
         void to_salesAndProfitsReport(Context context);
+        void to_itemInventory(Context context);
+
     }
 }

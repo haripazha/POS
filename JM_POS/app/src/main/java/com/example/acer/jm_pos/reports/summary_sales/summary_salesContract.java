@@ -16,5 +16,6 @@ public interface summary_salesContract {
         void storedFilteredStartDate(String month,String day,String year);
         void storedFilteredEndDate(String month,String day, String year);
 
+        void startAndEnd_validationAlert();
     }
 }

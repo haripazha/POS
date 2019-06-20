@@ -44,6 +44,7 @@ dependencies {
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.+'//for gif image
     implementation 'com.github.AnyChart:AnyChart-Android:1.1.2' //any chart library
     implementation 'com.daimajia.androidanimations:library:2.3@aar' //animation
+
     //Glide
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
