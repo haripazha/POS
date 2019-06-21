@@ -8,7 +8,9 @@ public interface generate_invBalanceContract {
                                    String inventory_item_name,
                                    String inventory_stock,
                                    String inventory_desc,
-                                   String inventory_price);
+                                   String inventory_price,
+                                   String UOM,
+                                   String date);
     }
     interface invBalance_presenter{
         void get_inventoryBalance();

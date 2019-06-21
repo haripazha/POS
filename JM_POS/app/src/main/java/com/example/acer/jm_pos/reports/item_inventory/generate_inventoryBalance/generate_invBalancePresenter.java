@@ -16,7 +16,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -37,7 +39,7 @@ public class generate_invBalancePresenter implements generate_invBalanceContract
     String inventory_stock = "";
     String inventory_desc = "";
     String inventory_price  = "";
-
+    String UOM = "";
 
     generate_invBalancePresenter(generate_invBalanceContract.invBalance_view view){
         this.mView = view;
@@ -51,6 +53,9 @@ public class generate_invBalancePresenter implements generate_invBalanceContract
         //Object declaration
         localhost = lc.getLocalhost();
 
+        //This generate current time
+        SimpleDateFormat day_format = new SimpleDateFormat("mm/dd/yyyy");
+        final String date = day_format.format(new Date());
 
 
 
@@ -70,10 +75,12 @@ public class generate_invBalancePresenter implements generate_invBalanceContract
                             inventory_stock = inventory_stock + jsonObject1.getString("stock") +"\n";
                             inventory_desc = inventory_desc + jsonObject1.getString("item_desc") + "\n";
                             inventory_price = inventory_price + jsonObject1.getString("item_price") + "\n";
-
+                            UOM = UOM + "PC" +"\n";
 
                         }
-                        mView.populateInventoryItem(inventory_id,inventory_item_name,inventory_stock,inventory_desc,inventory_price);
+
+
+                        mView.populateInventoryItem(inventory_id,inventory_item_name,inventory_stock,inventory_desc,inventory_price,UOM,date);
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }

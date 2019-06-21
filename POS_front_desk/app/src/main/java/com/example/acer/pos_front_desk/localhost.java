@@ -1,6 +1,7 @@
-package com.example.acer.jm_pos;
+package com.example.acer.pos_front_desk;
 
 public class localhost {
+
 
     String ip_address = "192.168.42.128" +
             "";
@@ -22,4 +23,5 @@ public class localhost {
     public void setLocalhost(String localhost) {
         this.localhost = localhost;
     }
+
 }

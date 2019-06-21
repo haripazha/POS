@@ -73,7 +73,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
 
-                    android:text="\t\t\t\tGenerate an Inventory Balance report that contains inventory id, description, UOM, and available stocks." />
+                    android:text="\t\t\t\tGenerate sales report that contains chart, description, UOM, and available stocks." />
 
                 <LinearLayout
                     android:layout_width="match_parent"

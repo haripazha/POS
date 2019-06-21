@@ -20,6 +20,8 @@ public class generate_inventoryBalance extends AppCompatActivity implements gene
     TextView item_price;
     TextView uom;
     TextView stocks;
+    TextView date;
+
     ImageView back_button;
 
     @Override
@@ -35,6 +37,7 @@ public class generate_inventoryBalance extends AppCompatActivity implements gene
         uom             = findViewById(R.id.uom);
         stocks          = findViewById(R.id.stocks);
         back_button     = findViewById(R.id.back_button);
+        date            = findViewById(R.id.date);
 
         //System start
         systemStart();
@@ -56,11 +59,14 @@ public class generate_inventoryBalance extends AppCompatActivity implements gene
 
     @Override
     public void populateInventoryItem(String inventory_id_string, String inventory_item_name_string, String inventory_stock_string,
-                                      String inventory_desc,String inventory_price) {
+                                      String inventory_desc,String inventory_price,String UOM,String date_string) {
 
         inventory_id.setText(inventory_id_string);
         item_name.setText(inventory_item_name_string);
         item_price.setText(inventory_price);
+        stocks.setText(inventory_stock_string);
+        uom.setText(UOM);
+        date.setText("Date: "+date_string);
 
     }
 }

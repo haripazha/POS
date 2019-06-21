@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.acer.pos_front_desk">
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+
+        <!-- BACKGROUND SERVICES -->
+        <service
+            android:name=".background_services.background_services"
+            android:exported="false" />
+
+        <receiver android:name=".background_services.BootReceiver">
+            <intent-filter>
+                <action android:name="com.example.sample" />
+                <action android:name="android:intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+
+        <!-- Splash Screen module -->
+        <activity
+            android:name=".splash_screen"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.Fullscreen">
+
+
+
+        </activity>
+
+        <activity android:name=".main_view.main_view"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.Fullscreen"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
