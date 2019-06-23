@@ -34,7 +34,6 @@ public class main_view extends AppCompatActivity implements  main_viewContract.m
         presenter = new main_viewPresenter(this);
         instance = this;
 
-
         //object declaration
         connect         = findViewById(R.id.connect);
         item_name       = findViewById(R.id.item_name);
@@ -42,7 +41,6 @@ public class main_view extends AppCompatActivity implements  main_viewContract.m
         item_price      = findViewById(R.id.item_price);
         item_total      = findViewById(R.id.item_total);
         item_subtotal   = findViewById(R.id.item_subTotal);
-
 
         //System start
         systemStart();
@@ -54,7 +52,6 @@ public class main_view extends AppCompatActivity implements  main_viewContract.m
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(),"Connected",Toast.LENGTH_LONG).show();
-
                 startService(new Intent(main_view.this,background_services.class));
             }
         });
@@ -65,7 +62,6 @@ public class main_view extends AppCompatActivity implements  main_viewContract.m
 
     @Override
     public void populate_the_textView(String item_name_1, String item_quantity_1, String item_price_1, String item_total_1, double item_subTotal_1) {
-
 
         //set object data
         item_name.setText(item_name_1);
