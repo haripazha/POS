@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.acer.pos_user">
 
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".splash_screen"
+        <activity
+            android:name=".splash_screen"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.Fullscreen">
             <intent-filter>
@@ -19,11 +27,30 @@
             </intent-filter>
         </activity>
 
-
         <!-- user login module -->
-        <activity android:name=".user_login.user_login"
+        <activity
+            android:name=".user_login.user_login"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.Fullscreen"
+            android:theme="@style/AppTheme.Fullscreen" />
+
+        <!-- user register module -->
+        <activity
+            android:name=".user_register.user_register"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.Fullscreen" />
+
+        <!-- user_register username and password -->
+        <activity
+            android:name=".user_register.user_register_username_password_data"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.Fullscreen" />
+
+        <!-- user main View -->
+        <activity
+            android:name=".user_mainView.user_mainView"
+            android:label="@string/title_activity_user_main_view"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="landscape"
             ></activity>
     </application>
 

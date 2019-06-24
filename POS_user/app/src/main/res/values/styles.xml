@@ -14,4 +14,30 @@
         <item name="android:windowFullscreen">true</item>
     </style>
 
+    <style name="activity_login_inputLayout" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:textColorHint">#ffffff</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorAccent">#d35400</item>
+        <item name="colorControlNormal">#d35400</item>
+        <item name="colorControlActivated">#d35400</item>
+    </style>
+
+    <style name="TextLabel" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:textColorHint">#ffffff</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorAccent">#d35400</item>
+        <item name="colorControlNormal">#d35400</item>
+        <item name="colorControlActivated">#d35400</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 </resources>
