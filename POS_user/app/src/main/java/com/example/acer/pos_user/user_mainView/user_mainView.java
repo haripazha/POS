@@ -29,6 +29,7 @@ order_history.OnFragmentInteractionListener{
 
     //mvp declaration
     user_mainViewPresenter presenter;
+    public static user_mainView instance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +37,7 @@ order_history.OnFragmentInteractionListener{
         setContentView(R.layout.activity_user_main_view);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        instance = this;
         //mvp declaration
         presenter = new user_mainViewPresenter(this);
 
@@ -148,5 +149,13 @@ order_history.OnFragmentInteractionListener{
         intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         startActivity(intent);
         finish();
+    }
+
+    //goTo Order
+    public void my_orderProcessed(){
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.frame, new order());
+        ft.commit();
+        getSupportActionBar().setTitle(Html.fromHtml("<font color='#FFFFFF' align='center'>Order</font>"));
     }
 }

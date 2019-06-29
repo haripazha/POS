@@ -49,8 +49,25 @@
         <activity
             android:name=".user_mainView.user_mainView"
             android:label="@string/title_activity_user_main_view"
-            android:theme="@style/AppTheme"
             android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.Fullscreen" />
+
+        <!-- order shop main -->
+        <activity
+            android:name=".user_mainView.fragment.order.order_shop_main.order_shop_main"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.Fullscreen" />
+
+        <!-- order shop checkout -->
+        <activity
+            android:name=".user_mainView.fragment.order.order_shop_checkout.order_shop_checkout"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.Fullscreen" />
+
+        <!-- generated history -->
+        <activity android:name=".user_mainView.fragment.order_history.generated_history.generated_history"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.Fullscreen"
             ></activity>
     </application>
 

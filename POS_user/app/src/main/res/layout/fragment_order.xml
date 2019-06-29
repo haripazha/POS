@@ -1,36 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#34495e"
     tools:context=".user_mainView.fragment.order.order">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center_vertical|center_horizontal"
         android:orientation="vertical">
 
-        <LinearLayout
+        <ImageView
+
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/information_icon" />
+
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="50dp"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textSize="16dp"
+            android:textColor="#FFF"
+            android:layout_margin="20dp"
+            android:text="Note: Use this application to order your desired product. \n Order cancelation is not allowed once it process" />
 
-            <Button
-                android:id="@+id/button"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight=".5"
-                android:text="Button" />
-
-
-            <Button
-                android:id="@+id/order"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight=".5"
-                android:text="Start Ordering" />
-        </LinearLayout>
+        <Button
+            android:id="@+id/start_shopping"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:text="Start Order"
+            android:background="#e67e22"
+            android:textColor="#FFF"
+            android:textStyle="bold"
+            android:textSize="16dp"/>
     </LinearLayout>
 </RelativeLayout>

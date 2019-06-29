@@ -1,14 +1,17 @@
 package com.example.acer.pos_user.user_mainView.fragment.order;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.example.acer.pos_user.R;
+import com.example.acer.pos_user.user_mainView.fragment.order.order_shop_main.order_shop_main;
 
 public class order extends Fragment implements order_contract.order_view{
     private static final String ARG_PARAM1 = "param1";
@@ -22,6 +25,11 @@ public class order extends Fragment implements order_contract.order_view{
     //mvp presenter
     order_presenter presenter;
 
+    //object declaration
+    Button  start_order;
+
+    //instance
+    public static order instance;
 
     public order() {
 
@@ -50,8 +58,14 @@ public class order extends Fragment implements order_contract.order_view{
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_order, container, false);
         presenter = new order_presenter(this);
+        instance = this;
+
+        //object declaration
+        start_order = view.findViewById(R.id.start_shopping);
 
 
+        //run this method when fragment start
+        systemStart();
         return view;
 
     }
@@ -82,4 +96,18 @@ public class order extends Fragment implements order_contract.order_view{
     public interface OnFragmentInteractionListener {
         void onFragmentInteraction(Uri uri);
     }
+
+    //run this method when fragment start
+    public void systemStart(){
+        start_order.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(),order_shop_main.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(intent);
+            }
+        });
+    }
+
+
 }

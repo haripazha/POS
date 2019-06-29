@@ -23,6 +23,7 @@ import com.example.acer.jm_pos.R;
 import com.example.acer.jm_pos.dashboard.dashboard_fragment;
 import com.example.acer.jm_pos.home_sales.home_sales_fragment.home_sale_fragment;
 import com.example.acer.jm_pos.inventory.inventory_fragment;
+import com.example.acer.jm_pos.orders.orders;
 import com.example.acer.jm_pos.reports.reports_fragment;
 
 
@@ -30,7 +31,7 @@ import com.example.acer.jm_pos.reports.reports_fragment;
 
 public class home_sales extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, home_sale_fragment.OnFragmentInteractionListener, home_sales_contract.home_sales_view,
-        inventory_fragment.OnFragmentInteractionListener,dashboard_fragment.OnFragmentInteractionListener,reports_fragment.OnFragmentInteractionListener{
+        inventory_fragment.OnFragmentInteractionListener,dashboard_fragment.OnFragmentInteractionListener,reports_fragment.OnFragmentInteractionListener,orders.OnFragmentInteractionListener{
 
     home_sales_presenter presenter;
     Menu menu;
@@ -189,6 +190,13 @@ public class home_sales extends AppCompatActivity
             presenter.onLogout();
         }else if (id == R.id.nav_setting) {
 
+        } else if(id == R.id.nav_orders) {
+
+            //Intent to other fragment
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.frame, new orders());
+            ft.commit();
+            getSupportActionBar().setTitle(Html.fromHtml("<font color='#FFFFFF' align='center'>Orders</font>"));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -256,6 +264,7 @@ public class home_sales extends AppCompatActivity
         ft.commit();
         getSupportActionBar().setTitle(Html.fromHtml("<font color='#FFFFFF' align='center'>Inventory</font>"));
     }
+
 
 
 

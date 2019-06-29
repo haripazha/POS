@@ -1,14 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#34495e"
     tools:context=".user_mainView.fragment.order_history.order_history">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:background="#2c3e50"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Generate your order history"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:textColor="#e3e3e3"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:background="#2c3e50"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Generate History"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:textColor="#e3e3e3"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor="#FFF"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"
+                    android:text="Select Date:" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/start_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:ems="10"
+                        android:layout_margin="10dp"
+                        android:inputType="textPersonName"
+                        android:hint="Start Date"
+                        android:focusable="false"
+                        android:layout_weight=".5"
+                        android:textColorHint="#FFF"
+                        android:textColor="#FFF"/>
+
+
+
+                    <EditText
+                        android:id="@+id/end_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:ems="10"
+                        android:layout_margin="10dp"
+                        android:focusable="false"
+                        android:inputType="textPersonName"
+                        android:hint="End Date"
+                        android:layout_weight=".5"
+                        android:textColorHint="#FFF"
+                        android:textColor="#FFF"/>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#e74c3c"
+                    android:text="Show History"
+                    android:textColor="#FFF"
+                    android:textStyle="bold"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

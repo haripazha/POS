@@ -125,7 +125,13 @@
             android:theme="@style/AppTheme.Fullscreen" />
 
         <!-- Reports generate inventoryBalance -->
-        <activity android:name=".reports.item_inventory.generate_inventoryBalance.generate_inventoryBalance"
+        <activity
+            android:name=".reports.item_inventory.generate_inventoryBalance.generate_inventoryBalance"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.Fullscreen" />
+
+        <!-- Orders  -->
+        <activity android:name=".orders.view_order.view_order"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.Fullscreen"
             ></activity>

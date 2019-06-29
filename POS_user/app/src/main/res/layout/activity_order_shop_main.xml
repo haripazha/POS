@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#34495e"
+    tools:context=".user_mainView.fragment.order.order_shop_main.order_shop_main">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:gravity="left"
+            android:background="#22303e">
+
+            <ImageView
+                android:id="@+id/home"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight=".6"
+
+                android:src="@drawable/home_icon" />
+
+            <ImageView
+                android:id="@+id/category"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight=".6"
+                android:src="@drawable/categories_icon" />
+
+            <Button
+                android:id="@+id/checkout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight=".3"
+                android:layout_margin="10dp"
+                android:textColor="#FFF"
+                android:textStyle="bold"
+                android:background="#e74c3c"
+                android:text="Submit Orders"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/item_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFF"
+                android:layout_weight=".5"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight=".5"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Your Orders"
+                    android:padding="5dp"
+                    android:textSize="12dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:background="#c0392b"
+                    android:textStyle="bold"
+                    android:textColor="#FFF"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/item_cart_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".1" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

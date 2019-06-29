@@ -2,6 +2,7 @@ package com.example.acer.pos_user.user_login;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Handler;
 import android.util.Log;
 import android.widget.Toast;
@@ -71,6 +72,14 @@ public class user_loginPresenter implements user_loginContract.user_loginPresent
                 if(!response.contains("failed")){
                     if(!response.contains("customer_notExists")){
                         if(response.contains("customer_exists")){
+
+                            //Store username to local storage
+                            //Store deviceId/cart id
+                            SharedPreferences store_home_sale_state = context.getSharedPreferences("customer_username", Context.MODE_PRIVATE);
+                            SharedPreferences.Editor store_home_sale_stateEdit = store_home_sale_state.edit();
+                            store_home_sale_stateEdit.putString("customer_username",username);
+                            store_home_sale_stateEdit.commit();
+
                             //Go To Main
                             mView.goToMain();
                         }
