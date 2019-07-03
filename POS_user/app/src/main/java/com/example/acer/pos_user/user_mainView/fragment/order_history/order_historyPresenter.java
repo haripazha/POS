@@ -2,6 +2,7 @@ package com.example.acer.pos_user.user_mainView.fragment.order_history;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 import android.widget.DatePicker;
 
@@ -61,12 +62,27 @@ public class order_historyPresenter implements order_historyContract.orderHistor
     }
 
     @Override
-    public void storedFilteredStartDate(String month, String day, String year) {
-
+    public void storedFilteredStartDate(String month, String day, String year,Context context) {
+        //Storing the start_date
+        SharedPreferences store_user_id = context.getSharedPreferences("customer_filter_date", Context.MODE_PRIVATE);
+        SharedPreferences.Editor store_username_editor = store_user_id.edit();
+        store_username_editor.putString("start_day",day);
+        store_username_editor.putString("start_month",month);
+        store_username_editor.putString("start_year",year);
+        store_username_editor.commit();
     }
 
     @Override
-    public void storedFilteredEndDate(String month, String day, String year) {
+    public void storedFilteredEndDate(String month, String day, String year,Context context) {
+
+        //Storing the end_date
+        SharedPreferences store_user_id = context.getSharedPreferences("customer_filter_date", Context.MODE_PRIVATE);
+        SharedPreferences.Editor store_username_editor = store_user_id.edit();
+        store_username_editor.putString("end_day",day);
+        store_username_editor.putString("end_month",month);
+        store_username_editor.putString("end_year",year);
+        store_username_editor.commit();
+
 
     }
 

@@ -130,8 +130,20 @@
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.Fullscreen" />
 
-        <!-- Orders  -->
-        <activity android:name=".orders.view_order.view_order"
+        <!-- Orders -->
+        <activity
+            android:name=".orders.view_order.view_order"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.Fullscreen" />
+
+        <!-- Orders view completed order -->
+        <activity
+            android:name=".orders.view_completed_order.view_completed_order"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.Fullscreen" />
+
+        <!-- Orders update order -->
+        <activity android:name=".orders.view_order.update_order.update_order"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.Fullscreen"
             ></activity>

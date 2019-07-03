@@ -95,7 +95,7 @@
                 </LinearLayout>
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/show_history_button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#e74c3c"

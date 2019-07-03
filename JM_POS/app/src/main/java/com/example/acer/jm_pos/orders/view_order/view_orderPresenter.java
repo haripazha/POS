@@ -50,7 +50,6 @@ public class view_orderPresenter implements view_orderContract.viewOrder_present
         final ArrayList<String> my_order_items = new ArrayList<>();
         final ArrayList<String> my_order_total = new ArrayList<>();
 
-
         StringRequest getCustomer_orders = new StringRequest(Request.Method.POST, localhost+main_orders, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {

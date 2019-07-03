@@ -65,7 +65,13 @@
             android:theme="@style/AppTheme.Fullscreen" />
 
         <!-- generated history -->
-        <activity android:name=".user_mainView.fragment.order_history.generated_history.generated_history"
+        <activity
+            android:name=".user_mainView.fragment.order_history.generated_history.generated_history"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.Fullscreen" />
+
+        <!-- generated history details -->
+        <activity android:name=".user_mainView.fragment.order_history.generated_history.generated_history_order_details.generated_history_order_details"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.Fullscreen"
             ></activity>

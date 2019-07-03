@@ -4,6 +4,141 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#34495e"
+    xmlns:card_View="http://schemas.android.com/apk/res-auto"
     tools:context=".user_mainView.fragment.order_history.generated_history.generated_history">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#242f39"
+            android:gravity="left"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/back_button"
+                android:layout_width="41dp"
+                android:layout_height="25dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="19dp"
+                app:srcCompat="@drawable/back_button" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Generated History Order"
+                android:textColor="#FFF"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:elevation="500dp"
+            android:paddingBottom="10dp"
+            card_View:cardBackgroundColor="#FFF"
+            card_View:cardCornerRadius="5dp"
+            card_View:cardElevation="@dimen/cardview_compat_inset_shadow">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/item_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:padding="10dp"
+                android:text="Item Count: 5 items"
+                android:textColor="#000"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/dateFrom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:text="Date From: 06/31/2019 - 06/31/2019"
+                android:gravity="right"
+                android:layout_marginRight="10dp"
+                android:textStyle="bold"
+                android:textColor="#000"/>
+
+        </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <LinearLayout
+            android:id="@+id/order_history_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/cus_salesHistory_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/no_data_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="20dp"
+                android:src="@drawable/no_data_icon" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="No Data"
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:textColor="#FFF"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/loading_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <pl.droidsonroids.gif.GifImageView
+
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="-45dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:src="@drawable/loading"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

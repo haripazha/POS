@@ -1,5 +1,6 @@
 package com.example.acer.jm_pos.orders.view_order;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.acer.jm_pos.R;
+import com.example.acer.jm_pos.orders.view_order.update_order.update_order;
 import com.example.acer.jm_pos.reports.top_products.top_products;
 import com.example.acer.jm_pos.reports.top_products.top_products_adapter;
 
@@ -19,16 +21,22 @@ public class view_order extends AppCompatActivity implements view_orderContract.
     //mvp
     view_orderPresenter presenter;
 
+    //instance
+    public static view_order instance;
+
+
     //object declaration
     RecyclerView view_order;
     ImageView back_button;
 
+    //instance
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_order);
         presenter = new view_orderPresenter(this);
+        instance = this;
 
         //object declaration
         view_order = findViewById(R.id.view_order);
@@ -61,5 +69,11 @@ public class view_order extends AppCompatActivity implements view_orderContract.
         view_order.setAdapter(adapter);
         view_order.setLayoutManager(new GridLayoutManager(getApplicationContext(),1));
 
+    }
+
+    public void go_to_View_order(){
+        Intent intent = new Intent(view_order.this,update_order.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        startActivity(intent);
     }
 }

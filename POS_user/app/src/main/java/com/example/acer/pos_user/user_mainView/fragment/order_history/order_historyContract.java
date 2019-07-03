@@ -11,7 +11,7 @@ public interface order_historyContract {
         void showStartDateDialog(Context context);
         void showEndDateDialog(Context context);
 
-        void storedFilteredStartDate(String month,String day,String year);
-        void storedFilteredEndDate(String month,String day,String year);
+        void storedFilteredStartDate(String month,String day,String year,Context context);
+        void storedFilteredEndDate(String month,String day,String year,Context context);
     }
 }

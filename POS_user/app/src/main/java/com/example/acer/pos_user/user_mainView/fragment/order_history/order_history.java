@@ -1,15 +1,19 @@
 package com.example.acer.pos_user.user_mainView.fragment.order_history;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.acer.pos_user.R;
+import com.example.acer.pos_user.user_mainView.fragment.order_history.generated_history.generated_history;
 
 public class order_history extends Fragment implements order_historyContract.orderHistory_view{
     private static final String ARG_PARAM1 = "param1";
@@ -26,6 +30,8 @@ public class order_history extends Fragment implements order_historyContract.ord
     //object declaration
     EditText start_date;
     EditText end_date;
+    Button showHistory_button;
+
 
     public order_history() {
 
@@ -59,7 +65,7 @@ public class order_history extends Fragment implements order_historyContract.ord
         //object declaration
         start_date = view.findViewById(R.id.start_date);
         end_date   = view.findViewById(R.id.end_date);
-
+        showHistory_button = view.findViewById(R.id.show_history_button);
         //run this method when fragment start
         systemStart();
 
@@ -96,7 +102,7 @@ public class order_history extends Fragment implements order_historyContract.ord
 
 
         //stored the date start date details
-        presenter.storedFilteredStartDate(month,day,year);
+        presenter.storedFilteredStartDate(month,day,year,getContext());
     }
 
     @Override
@@ -106,7 +112,7 @@ public class order_history extends Fragment implements order_historyContract.ord
         end_date.setText(month+"/"+day+"/"+year);
 
         //stored the date end date details
-        presenter.storedFilteredEndDate(month,day,year);
+        presenter.storedFilteredEndDate(month,day,year,getContext());
     }
 
 
@@ -128,6 +134,19 @@ public class order_history extends Fragment implements order_historyContract.ord
             @Override
             public void onClick(View v) {
                 presenter.showEndDateDialog(getContext());
+            }
+        });
+
+        showHistory_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!start_date.getText().toString().equals("")&&!end_date.getText().toString().equals("")){
+                    Intent intent = new Intent(getContext(),generated_history.class);
+                    startActivity(intent);
+                }else{
+                    Toast.makeText(getContext(),"Please select date!",Toast.LENGTH_LONG).show();
+                }
+
             }
         });
     }

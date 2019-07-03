@@ -1,6 +1,7 @@
 package com.example.acer.jm_pos.orders.view_order;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -10,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 
@@ -72,6 +74,16 @@ public class view_order_adapter extends RecyclerView.Adapter<view_order_adapter.
         viewHolder.items.setText("Items: "+my_order_items.get(i));
         viewHolder.order_total.setText("Total: Php "+my_order_total.get(i));
 
+        viewHolder.container.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                view_order vo = view_order.instance;
+                if(vo!=null){
+                    vo.go_to_View_order();
+                }
+            }
+        });
+
     }
 
     @Override
@@ -90,6 +102,7 @@ public class view_order_adapter extends RecyclerView.Adapter<view_order_adapter.
         TextView order_total;
 
         ImageView order_statusImage;
+        LinearLayout container;
 
         public viewHolder(@NonNull View itemView) {
             super(itemView);
@@ -100,11 +113,9 @@ public class view_order_adapter extends RecyclerView.Adapter<view_order_adapter.
             status      = itemView.findViewById(R.id.status);
             items       = itemView.findViewById(R.id.items);
             order_total = itemView.findViewById(R.id.order_total);
+            container   = itemView.findViewById(R.id.container);
         }
     }
-
-
-
 
 
 }
