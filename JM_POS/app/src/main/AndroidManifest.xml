@@ -41,7 +41,7 @@
             android:name=".home_sales.home_sales"
             android:label="@string/title_activity_home_sales"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -143,7 +143,13 @@
             android:theme="@style/AppTheme.Fullscreen" />
 
         <!-- Orders update order -->
-        <activity android:name=".orders.view_order.update_order.update_order"
+        <activity
+            android:name=".orders.view_order.update_order.update_order"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.Fullscreen" />
+
+        <!-- order view processing order -->
+        <activity android:name=".orders.view_processing_order.view_processing_order"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.Fullscreen"
             ></activity>

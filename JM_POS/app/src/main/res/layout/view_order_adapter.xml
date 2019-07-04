@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:background="#000"
     android:layout_height="match_parent">
 
 
@@ -8,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#FFF"
+        android:layout_margin="10dp"
         android:id="@+id/container"
         android:orientation="vertical">
 
@@ -24,7 +26,7 @@
                 android:scaleType="centerCrop"
                 android:layout_margin="10dp"
                 android:layout_weight=".5"
-                android:src="@drawable/icon_image" />
+                android:src="@drawable/pending_icon_a" />
 
             <LinearLayout
                 android:layout_width="match_parent"

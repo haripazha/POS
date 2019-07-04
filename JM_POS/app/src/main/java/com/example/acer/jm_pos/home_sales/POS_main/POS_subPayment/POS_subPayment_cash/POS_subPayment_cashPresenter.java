@@ -127,8 +127,6 @@ public class POS_subPayment_cashPresenter implements POS_subPayment_cashContract
                         @Override
                         public void run() {
                             pd.hide();
-
-
                             mView.displayPrintOption(change);
                         }
                     },1000);

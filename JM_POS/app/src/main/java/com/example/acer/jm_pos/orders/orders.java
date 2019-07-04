@@ -11,7 +11,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.acer.jm_pos.R;
+import com.example.acer.jm_pos.orders.view_completed_order.view_completed_order;
 import com.example.acer.jm_pos.orders.view_order.view_order;
+import com.example.acer.jm_pos.orders.view_processing_order.view_processing_order;
 
 public class orders extends Fragment implements orderContract.contractView{
     private static final String ARG_PARAM1 = "param1";
@@ -25,8 +27,8 @@ public class orders extends Fragment implements orderContract.contractView{
 
     //object declaration
     Button view_orders;
-    Button view_processing_order;
-    Button view_completed_order;
+    Button view_processing_orders;
+    Button view_completed_orders;
 
 
     private OnFragmentInteractionListener mListener;
@@ -63,8 +65,8 @@ public class orders extends Fragment implements orderContract.contractView{
 
         //object declaration
         view_orders = view.findViewById(R.id.view_order);
-        view_processing_order = view.findViewById(R.id.view_processing_order);
-        view_completed_order = view.findViewById(R.id.view_completed_order);
+        view_processing_orders = view.findViewById(R.id.view_processing_order);
+        view_completed_orders = view.findViewById(R.id.view_completed_order);
 
 
         //system start run this method when fragment started
@@ -83,17 +85,22 @@ public class orders extends Fragment implements orderContract.contractView{
             }
         });
 
-        view_processing_order.setOnClickListener(new View.OnClickListener() {
+        view_processing_orders.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(getContext(),view_processing_order.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(intent);
 
             }
         });
 
-        view_completed_order.setOnClickListener(new View.OnClickListener() {
+        view_completed_orders.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getContext(),view_completed_order.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(intent);
             }
         });
     }

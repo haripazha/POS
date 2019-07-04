@@ -67,12 +67,15 @@ public class loginPresenter implements loginContract.loginPresenter {
                     }else{
 
                      //new version for getting the data
-                     loginView.getUserId(username);
+                        if(response.contains(username)){
+                            loginView.getUserId(response);
+                        }else{
+                            pd.hide();
+                            Toast.makeText(context1,"Problem Occured",Toast.LENGTH_LONG).show();
+                        }
+
 
                     /*
-                    //Filtering string
-                    String filtered_string = response.replaceAll("user_exists","");
-                    Log.d("filtered_string_login",filtered_string);
 
                     //Storing user_id to local
                     SharedPreferences store_user_id = context.getSharedPreferences("username", Context.MODE_PRIVATE);
@@ -170,11 +173,25 @@ public class loginPresenter implements loginContract.loginPresenter {
         System.exit(0);
     }
 
+    @Override
+    public void getUserData(final String username) {
+        //Storing user_id to local
+        SharedPreferences store_user_id = context.getSharedPreferences("username", Context.MODE_PRIVATE);
+        SharedPreferences.Editor store_username_editor = store_user_id.edit();
+        store_username_editor.putString("username",username);
+        store_username_editor.commit();
+
+        //condition
+        loginView.isLoginSuccessful();
+    }
 
 
+/*
     @Override
     public void getUserData(final String username) {
         localhost = lc.getLocalhost();
+
+        Log.d("username_loginPreRes",username);
 
         StringRequest getUserData = new StringRequest(Request.Method.POST, localhost + main_login_php, new Response.Listener<String>() {
             @Override
@@ -185,7 +202,7 @@ public class loginPresenter implements loginContract.loginPresenter {
                     //Storing user_id to local
                     SharedPreferences store_user_id = context.getSharedPreferences("username", Context.MODE_PRIVATE);
                     SharedPreferences.Editor store_username_editor = store_user_id.edit();
-                    store_username_editor.putString("username",response);
+                    store_username_editor.putString("username",username);
                     store_username_editor.commit();
 
 
@@ -220,4 +237,7 @@ public class loginPresenter implements loginContract.loginPresenter {
         Volley.newRequestQueue(context).add(getUserData);
 
     }
+    */
+
+
 }

@@ -2,6 +2,7 @@ package com.example.acer.jm_pos.orders.view_order;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -77,6 +78,12 @@ public class view_order_adapter extends RecyclerView.Adapter<view_order_adapter.
         viewHolder.container.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Storing user_id to local
+                SharedPreferences store_user_id = context.getSharedPreferences("order_details_id", Context.MODE_PRIVATE);
+                SharedPreferences.Editor store_username_editor = store_user_id.edit();
+                store_username_editor.putString("order_details_id",item_id_list_1.get(i));
+                store_username_editor.commit();
+
                 view_order vo = view_order.instance;
                 if(vo!=null){
                     vo.go_to_View_order();

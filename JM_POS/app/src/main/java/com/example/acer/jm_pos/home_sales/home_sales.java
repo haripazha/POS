@@ -18,6 +18,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.acer.jm_pos.R;
 import com.example.acer.jm_pos.dashboard.dashboard_fragment;
@@ -71,6 +72,7 @@ public class home_sales extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         header = navigationView.inflateHeaderView(R.layout.nav_header_home_sales);
         navigationView.removeHeaderView(navigationView.getHeaderView(0));
+        navigationView.setItemIconTintList(null);
 
         //Object Declaration
         user_name               = header.findViewById(R.id.admin_name);
@@ -87,6 +89,14 @@ public class home_sales extends AppCompatActivity
         home_sales_state        = getInventory_state.getString("home_sales_state","");
 
         mainFragment(home_sales_state);
+
+        //run this method when system start
+        systemStart();
+    }
+
+    //run this method when system start
+    public void systemStart(){
+
     }
 
     @Override
@@ -248,9 +258,12 @@ public class home_sales extends AppCompatActivity
     @Override
     public void changeFragmentToSales() {
 
+        //getting the local storage of username
         SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("username", Context.MODE_PRIVATE);
-        String username=sharedPreferences.getString("username","");
+        String username = sharedPreferences.getString("username","");
         presenter.onUserData(username);
+
+        //replacing the old fragment to home sale fragment
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.frame, new home_sale_fragment());
         ft.commit();

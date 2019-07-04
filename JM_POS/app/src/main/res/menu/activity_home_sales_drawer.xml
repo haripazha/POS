@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_sales"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/pos_icon_menu_a"
             android:title="Sales" />
         <item
             android:id="@+id/nav_inventory"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/inventory_icon_menu"
             android:title="Inventory" />
         <item
             android:id="@+id/nav_dashboard"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/dashboard_icon_menu"
             android:title="Dashboard" />
         <item
             android:id="@+id/nav_reports"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/report_icon_menu"
             android:title="Reports" />
 
         <item
             android:id="@+id/nav_orders"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/order_icon_menu"
             android:title="Orders" />
     </group>
 
@@ -31,11 +32,11 @@
         <menu>
             <item
                 android:id="@+id/nav_setting"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Setting" />
+                android:icon="@drawable/profile_icon_menu"
+                android:title="Profile" />
             <item
                 android:id="@+id/nav_logout"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/logout_menu_icon"
                 android:title="Logout" />
         </menu>
     </item>

@@ -40,6 +40,7 @@ public class home_sales_presenter implements home_sales_contract.home_sales_pres
     //Database Connection Declaration [Do Not Delete]
     String localhost = "";
     String main_login_php = localhost + "/MEATSHOP_POS_SALE/android_php/home_sales/main_home_sale.php";
+    String get_user_dataPhp = localhost + "/MEATSHOP_POS_SALE/android_php/home_sales/get_user_data.php";
     com.example.acer.jm_pos.localhost lc = new localhost();
 
 
@@ -93,33 +94,12 @@ public class home_sales_presenter implements home_sales_contract.home_sales_pres
     public void onUserData(final String username) {
         localhost = lc.getLocalhost();
 
-        Log.d("username",username);
-
-        StringRequest getUserData = new StringRequest(Request.Method.POST, localhost + main_login_php, new Response.Listener<String>() {
+        StringRequest getUserData = new StringRequest(Request.Method.POST, localhost + get_user_dataPhp, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Log.d("onUserDataResponse",response.toString());
                     if(!response.contains("failed")){
-                        /*
-                        if(!response.contains("not_exists")){
-                            try {
-                                JSONObject jsonObject = new JSONObject(response.substring(response.indexOf("{"), response.lastIndexOf("}") + 1));
-                                JSONArray jsonArray = jsonObject.getJSONArray("user_data");
-                                for(int a=0;a<jsonArray.length();a++){
-                                    JSONObject jsonObject1 = jsonArray.getJSONObject(a);
-                                    String first_name   = jsonObject1.getString("first_name");
-                                    String last_name    = jsonObject1.getString("last_name");
-                                    String age          = jsonObject1.getString("age");
-                                    String contact_number = jsonObject1.getString("contact_number");
-                                    String address        = jsonObject1.getString("address");
-                                    Mview.onPopulateNavData(first_name,last_name,contact_number);
-                                }
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                        }else{
-                            Toast.makeText(context,"Can't Retrieve Data!",Toast.LENGTH_LONG).show();
-                        }*/
+
                     }else{
                         Toast.makeText(context,"Failed Query",Toast.LENGTH_LONG).show();
                     }
@@ -134,7 +114,7 @@ public class home_sales_presenter implements home_sales_contract.home_sales_pres
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 HashMap<String,String> hashMap = new HashMap<>();
-                    hashMap.put("function","getUserData");
+                    hashMap.put("function","get_userDetails");
                     hashMap.put("get_username",username);
                 return hashMap;
             }
