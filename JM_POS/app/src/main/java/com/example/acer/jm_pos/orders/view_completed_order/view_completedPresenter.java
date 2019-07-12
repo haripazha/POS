@@ -56,10 +56,10 @@ public class view_completedPresenter implements view_completedContract.view_comp
             public void onResponse(String response) {
                 Log.d("getCustOrder_res",response);
                 if(!response.contains("failed")){
-                    if(!response.contains("no_orders")){
+                    if(!response.contains("no_data_found")){
                         try {
                             JSONObject jsonObject = new JSONObject(response.substring(response.indexOf("{"), response.lastIndexOf("}") + 1));
-                            JSONArray jsonArray = jsonObject.getJSONArray("cust_orders");
+                            JSONArray jsonArray = jsonObject.getJSONArray("order_data");
                             for(int i=0;i<jsonArray.length();i++){
                                 JSONObject jsonObject1 = jsonArray.getJSONObject(i);
 
@@ -75,6 +75,7 @@ public class view_completedPresenter implements view_completedContract.view_comp
                             mView.populateMy_orderList(my_order_id,my_order_status,my_order_customUsername,my_order_items,
                                     my_order_total);
                         } catch (JSONException e) {
+                            Log.d("view_compExcept",e.toString());
                             e.printStackTrace();
                         }
 

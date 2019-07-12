@@ -47,7 +47,8 @@ public class view_completed_order extends AppCompatActivity implements view_comp
             }
         });
 
-
+        //get completed orders
+        presenter.getCustomer_orders();
     }
 
 

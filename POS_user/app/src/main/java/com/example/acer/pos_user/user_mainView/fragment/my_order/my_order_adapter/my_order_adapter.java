@@ -66,6 +66,12 @@ public class my_order_adapter extends RecyclerView.Adapter<my_order_adapter.view
         viewHolder.status.setText("Status: "+order_status.get(i));
         viewHolder.items.setText("Items: "+order_items.get(i));
         viewHolder.order_total.setText("Total: Php "+order_order_total.get(i));
+
+        if(order_status.get(i).equals("Process")){
+
+        }else if(order_status.get(i).equals("Completed")){
+
+        }
     }
 
     @Override

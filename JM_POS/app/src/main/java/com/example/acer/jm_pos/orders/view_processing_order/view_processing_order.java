@@ -45,6 +45,9 @@ public class view_processing_order extends AppCompatActivity implements view_pro
             }
         });
 
+        //get processing orders
+        presenter.get_processing_orders();
+
     }
 
     @Override

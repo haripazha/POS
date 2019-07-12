@@ -164,6 +164,7 @@ public class POS_main extends AppCompatActivity implements POS_mainContract.POS_
         POS_mainCartItem_Adapter adapter = new POS_mainCartItem_Adapter(getApplicationContext());
         adapter.SetData(cart_id,customer_id,item_name,item_quantity,item_price,image_item);
         cart_recyclerView.setAdapter(adapter);
+        cart_recyclerView.setVisibility(View.VISIBLE);
         cart_recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(),1));
     }
 
@@ -221,6 +222,11 @@ public class POS_main extends AppCompatActivity implements POS_mainContract.POS_
 
         //Store new
         presenter.storeDiscountedPayment(total_with_discount,split_count,total_discount);
+    }
+
+    @Override
+    public void clearList() {
+        cart_recyclerView.setVisibility(View.GONE);
     }
 
 

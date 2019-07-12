@@ -576,31 +576,35 @@ public class POS_mainPresenter implements POS_mainContract.POS_mainPresenter {
             public void onResponse(String response) {
                 Log.d("getCartListRes",response.toString());
                 if(!response.contains("failed")){
-                    try {
-                        JSONObject jsonObject = new JSONObject(response.substring(response.indexOf("{"), response.lastIndexOf("}") + 1));
-                        JSONArray jsonArray = jsonObject.getJSONArray("cart_data");
-                        for(int i = 0; i < jsonArray.length(); i++){
-                            JSONObject jsonObject1 = jsonArray.getJSONObject(i);
+                   if(!response.contains("no_data")){
+                       try {
+                           JSONObject jsonObject = new JSONObject(response.substring(response.indexOf("{"), response.lastIndexOf("}") + 1));
+                           JSONArray jsonArray = jsonObject.getJSONArray("cart_data");
+                           for(int i = 0; i < jsonArray.length(); i++){
+                               JSONObject jsonObject1 = jsonArray.getJSONObject(i);
 
-                            //Getting the value and storing to arraylist
-                            cart_id_1.add(jsonObject1.getString("cart_id"));
-                            customer_id_1.add(jsonObject1.getString("customer_id"));
-                            item_name_1.add(jsonObject1.getString("item_name"));
-                            item_quantity_1.add(jsonObject1.getString("item_quantity"));
-                            item_price_1.add(jsonObject1.getString("item_price"));
-                            item_image_1.add(jsonObject1.getString("item_image"));
+                               //Getting the value and storing to arraylist
+                               cart_id_1.add(jsonObject1.getString("cart_id"));
+                               customer_id_1.add(jsonObject1.getString("customer_id"));
+                               item_name_1.add(jsonObject1.getString("item_name"));
+                               item_quantity_1.add(jsonObject1.getString("item_quantity"));
+                               item_price_1.add(jsonObject1.getString("item_price"));
+                               item_image_1.add(jsonObject1.getString("item_image"));
 
-                            //Populate cart list of the view
-                            mView.populateCartList(cart_id_1,customer_id_1,item_name_1,item_quantity_1,item_price_1,item_image_1);
+                               //Populate cart list of the view
+                               mView.populateCartList(cart_id_1,customer_id_1,item_name_1,item_quantity_1,item_price_1,item_image_1);
 
 
-                        }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                        Log.d("getCartPrintStact",e.toString());
-                        Toast.makeText(context,"Exception Error!",Toast.LENGTH_LONG).show();
-                    }
+                           }
+                       } catch (JSONException e) {
+                           e.printStackTrace();
+                           Log.d("getCartPrintStact",e.toString());
+                           Toast.makeText(context,"Exception Error!",Toast.LENGTH_LONG).show();
+                       }
 
+                   }else{
+                        mView.clearList();
+                   }
                 }else{
                     Toast.makeText(context,"Failed to retrieve data!",Toast.LENGTH_LONG).show();
                 }

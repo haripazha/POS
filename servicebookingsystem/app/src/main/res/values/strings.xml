@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">service booking system</string>
+
+
+    <string-array name="user_type_registration">
+        <item>User</item>
+        <item>Service Provider</item>
+    </string-array>
+
+    <string-array name="philippines_region">
+        <item>Caloocan City</item>
+        <item>Las Piñas City</item>
+        <item>Makati City</item>
+        <item>Malabon City</item>
+        <item>Mandaluyong City</item>
+        <item>Manila City</item>
+        <item>Marikina City</item>
+        <item>Muntinlupa City</item>
+        <item>Navotas City</item>
+        <item>Parañaque City</item>
+        <item>Pasay City</item>
+        <item>Pasig City</item>
+        <item>Quezon City</item>
+        <item>San Juan City</item>
+        <item>DTaguig City</item>
+        <item>Valenzuela City</item>
+    </string-array>
+
+    <string-array name="service_category">
+        <item>-Select Category-</item>
+        <item>Advertising</item>
+        <item>Agriculture and Forestry</item>
+        <item>Animal Welfare</item>
+        <item>Brokerage and Investment</item>
+        <item>Car Services</item>
+        <item>Consulting</item>
+        <item>Courier and Logistics</item>
+        <item>Education</item>
+        <item>Engineering</item>
+        <item>Events, Planning, Arts and Entertainment</item>
+        <item>Food and Related Products</item>
+        <item>Health Care</item>
+        <item>Human Resources and Employment Agencies</item>
+        <item>Information Technology and Computer Service</item>
+        <item>Others</item>
+        <item>Real Estate Services</item>
+        <item>Rental Services</item>
+        <item>Repairs and Maintenance</item>
+        <item>Retail</item>
+        <item>Telecommunications</item>
+        <item>Travel, Tourism, Hospitality and Recreation</item>
+    </string-array>
+    <string name="title_activity_home_view">home_view</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_provider_home_view">provider_home_view</string>
+    <string name="title_activity_booking_confirmations">Map</string>
+</resources>

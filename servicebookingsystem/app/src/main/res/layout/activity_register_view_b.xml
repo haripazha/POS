@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".user_register_view.register_view_b.register_view_b">
+
+    <LinearLayout
+        android:id="@+id/loading_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:background="#ecf0f1"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <pl.droidsonroids.gif.GifImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="-45dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/loading"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Loading..."
+            android:gravity="center"
+            android:textColor="#2980b9"
+            android:layout_margin="10dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/register_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#2980b9"
+            android:gravity="left"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:id="@+id/back_button"
+                android:layout_width="41dp"
+                android:layout_height="25dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="19dp"
+                app:srcCompat="@drawable/back_button" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Register - Step 3"
+                android:textColor="#FFF"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Terms and Agreement"
+                    android:textStyle="bold"
+                    android:textColor="#484848"
+                    android:layout_margin="20dp"
+                    android:textSize="17dp"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="false"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="\t Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Accumsan lacus vel facilisis volutpat est velit egestas dui id. Lacus vestibulum sed arcu non odio euismod lacinia at. Pellentesque pulvinar pellentesque habitant morbi tristique senectus. At ultrices mi tempus imperdiet nulla. Non blandit massa enim nec dui. Elementum tempus egestas sed sed risus pretium quam vulputate dignissim. Elit pellentesque habitant morbi tristique. Pulvinar mattis nunc sed blandit. Vitae congue mauris rhoncus aenean vel. In dictum non consectetur a erat nam at lectus. Sed tempus urna et pharetra pharetra massa massa.
+
+\t Nunc faucibus a pellentesque sit amet. Amet justo donec enim diam vulputate ut. Odio facilisis mauris sit amet massa vitae tortor condimentum. Faucibus pulvinar elementum integer enim neque. Hendrerit gravida rutrum quisque non tellus orci. Vestibulum morbi blandit cursus risus. Tristique sollicitudin nibh sit amet. Pulvinar elementum integer enim neque volutpat. Magnis dis parturient montes nascetur ridiculus mus. Pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu. Enim lobortis scelerisque fermentum dui faucibus in ornare quam. Aenean euismod elementum nisi quis. Risus viverra adipiscing at in tellus integer feugiat. Ac tortor vitae purus faucibus. Adipiscing enim eu turpis egestas pretium aenean. Tincidunt eget nullam non nisi est sit. Pellentesque massa placerat duis ultricies lacus. Non sodales neque sodales ut etiam sit amet nisl. Amet cursus sit amet dictum sit amet justo donec.
+
+\tJusto eget magna fermentum iaculis eu non diam phasellus. Fringilla est ullamcorper eget nulla facilisi etiam. Varius vel pharetra vel turpis nunc eget lorem dolor. Diam sollicitudin tempor id eu nisl nunc. Pretium lectus quam id leo in vitae turpis massa sed. Sit amet mauris commodo quis imperdiet. Netus et malesuada fames ac turpis egestas. Elementum sagittis vitae et leo duis ut diam. Nulla facilisi cras fermentum odio eu feugiat. Vitae auctor eu augue ut lectus arcu bibendum at. Tristique senectus et netus et malesuada fames. Maecenas pharetra convallis posuere morbi leo urna molestie at. Blandit aliquam etiam erat velit scelerisque. Vel pharetra vel turpis nunc eget lorem dolor. Luctus accumsan tortor posuere ac. Nulla pellentesque dignissim enim sit amet. Lorem ipsum dolor sit amet consectetur adipiscing elit duis tristique. Lectus nulla at volutpat diam ut venenatis. In nisl nisi scelerisque eu ultrices vitae auctor. Ultrices in iaculis nunc sed augue lacus.
+
+\t Odio ut enim blandit volutpat maecenas. Nunc mattis enim ut tellus elementum sagittis vitae et leo. Nunc sed velit dignissim sodales. Enim nunc faucibus a pellentesque. Pharetra vel turpis nunc eget lorem dolor sed. Dolor purus non enim praesent elementum facilisis leo. Ut sem nulla pharetra diam sit amet. Nam libero justo laoreet sit amet cursus sit amet dictum. Cum sociis natoque penatibus et magnis dis parturient montes nascetur. Pellentesque habitant morbi tristique senectus et. Tellus mauris a diam maecenas sed. Eget nulla facilisi etiam dignissim diam quis enim. Nisi est sit amet facilisis magna etiam. Quam adipiscing vitae proin sagittis nisl. Posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus. Vestibulum mattis ullamcorper velit sed ullamcorper morbi. Netus et malesuada fames ac turpis egestas maecenas pharetra convallis. Tincidunt vitae semper quis lectus nulla at volutpat diam. Accumsan sit amet nulla facilisi morbi tempus iaculis urna id. Pulvinar pellentesque habitant morbi tristique senectus et netus.
+
+\t Eget aliquet nibh praesent tristique magna sit amet. Facilisis mauris sit amet massa vitae tortor condimentum lacinia. Tincidunt id aliquet risus feugiat in ante metus. Senectus et netus et malesuada fames ac turpis. In hac habitasse platea dictumst vestibulum rhoncus est. Pharetra et ultrices neque ornare aenean euismod. Vestibulum sed arcu non odio euismod. Purus in massa tempor nec feugiat. Nibh tortor id aliquet lectus proin nibh nisl condimentum id. Viverra maecenas accumsan lacus vel facilisis volutpat est velit egestas. Nulla posuere sollicitudin aliquam ultrices sagittis."
+                   android:layout_marginBottom="25dp"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    android:id="@+id/accept"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="I accept"
+                    android:background="#e74c3c"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="20dp"
+                    android:textColor="#FFF"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

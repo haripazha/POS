@@ -57,21 +57,22 @@ public class view_processingPresenter implements view_processingContract.view_pr
                 if(!response.contains("failed")){
                     if(!response.contains("no_data_found")){
                         try {
-                            JSONObject jsonObject = new JSONObject(response);
+                            JSONObject jsonObject = new JSONObject(response.substring(response.indexOf("{"), response.lastIndexOf("}") + 1));
                             JSONArray jsonArray = jsonObject.getJSONArray("order_data");
                             for(int i=0;i<jsonArray.length();i++){
                                 JSONObject jsonObject1 = jsonArray.getJSONObject(i);
 
                                 //get object string
+
                                 //getString
                                 my_order_id.add(jsonObject1.getString("my_order_id"));
                                 my_order_status.add(jsonObject1.getString("my_order_status"));
                                 my_order_customUsername.add(jsonObject1.getString("my_order_customUsername"));
                                 my_order_items.add(jsonObject1.getString("my_order_items"));
                                 my_order_total.add(jsonObject1.getString("my_order_total"));
-
                             }
-
+                            mView.populate_process_order_list(my_order_id,my_order_status,my_order_customUsername,my_order_items,
+                                    my_order_total);
 
                         } catch (JSONException e) {
                             e.printStackTrace();

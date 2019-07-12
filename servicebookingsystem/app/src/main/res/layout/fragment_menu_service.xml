@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#95a5a6"
+    tools:context=".provider_home_view.menu_service.menu_service">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/my_service_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight=".15"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight=".9"
+            android:padding="10dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/add_service"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#2980b9"
+                android:textColor="#FFF"
+                android:textStyle="bold"
+                android:text="+ Add New Service" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

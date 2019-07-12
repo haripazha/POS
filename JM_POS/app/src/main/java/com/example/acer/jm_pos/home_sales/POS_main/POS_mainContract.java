@@ -44,6 +44,8 @@ public interface POS_mainContract{
 
         void onValidatedDelete(String item_name,String customer_id);
         void updateTotalWithDiscount(double total_with_discount, int split_count,double total_discount);
+
+        void clearList();
     }
     interface POS_mainPresenter{
         void getItem(String category);

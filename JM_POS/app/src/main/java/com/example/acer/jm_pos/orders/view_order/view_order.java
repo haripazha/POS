@@ -75,5 +75,6 @@ public class view_order extends AppCompatActivity implements view_orderContract.
         Intent intent = new Intent(view_order.this,update_order.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         startActivity(intent);
+        finish();
     }
 }

@@ -52,7 +52,7 @@ public class POS_mainCartItem_Adapter extends RecyclerView.Adapter<POS_mainCartI
         this.item_price_1 = item_price;
         this.item_image_1 = item_image;
 
-        Log.d("adapter_data",cart_id.toString());
+        Log.d("cart_image",item_image_1.toString());
 
     }
     @NonNull
