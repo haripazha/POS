@@ -98,7 +98,7 @@
                         android:id="@+id/service_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Car Rentals"
+                        android:text="-Title-"
                         android:textStyle="bold"
                         android:textSize="18dp"
                         android:textColor="#000" />
@@ -113,7 +113,7 @@
                         android:id="@+id/service_description"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="We provide cheap car for rent"
+                        android:text="-description-"
                         android:textColor="#000"
                         android:layout_marginTop="10dp"/>
 
@@ -121,7 +121,7 @@
                         android:id="@+id/service_address"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Regus, cubao aurora quezon city, Philippines"
+                        android:text="-address-"
                         android:layout_marginTop="10dp"
                         android:textColor="#000" />
 
@@ -136,7 +136,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight=".5"
-                            android:text="Distance: 10 KM away"
+                            android:text="Distance: -"
                             android:textStyle="bold"
                             android:textColor="#34495e" />
 
@@ -145,7 +145,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight=".5"
-                            android:text="Rate: Php 1000"
+                            android:text="Rate: -"
                             android:gravity="right"
                             android:textStyle="bold"
                             android:textColor="#34495e" />

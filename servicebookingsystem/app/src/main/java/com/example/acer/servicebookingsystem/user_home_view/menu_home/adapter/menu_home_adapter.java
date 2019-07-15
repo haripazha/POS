@@ -78,6 +78,7 @@ public class menu_home_adapter extends RecyclerView.Adapter<menu_home_adapter.vi
         viewHolder.service_title.setText(service_name.get(i));
         //viewHolder.service_description.setText(service_description.get(i));
         viewHolder.service_rate.setText("Php "+service_rate.get(i));
+        viewHolder.service_type.setText(service_type.get(i));
 
         viewHolder.card_container.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,7 +109,7 @@ public class menu_home_adapter extends RecyclerView.Adapter<menu_home_adapter.vi
         //object declaration
         ImageView service_image;
         TextView service_title;
-        TextView service_description;
+        TextView service_type;
         TextView service_rate;
 
         CardView card_container;
@@ -123,6 +124,7 @@ public class menu_home_adapter extends RecyclerView.Adapter<menu_home_adapter.vi
             //service_description = itemView.findViewById(R.id.service_description);
             card_container      = itemView.findViewById(R.id.card);
             service_rate        = itemView.findViewById(R.id.service_rate);
+            service_type        = itemView.findViewById(R.id.service_type);
         }
     }
 }

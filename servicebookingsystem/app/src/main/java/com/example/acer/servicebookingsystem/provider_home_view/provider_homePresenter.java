@@ -162,4 +162,10 @@ public class provider_homePresenter implements provider_homeContract.provider_ho
         };
         Volley.newRequestQueue(context).add(getUser_details);
     }
+
+    @Override
+    public void startServices() {
+        //start service
+        context.startService(new Intent(context,background_services.class));
+    }
 }

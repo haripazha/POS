@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
@@ -14,6 +15,7 @@ import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.acer.servicebookingsystem.current_location.current_location;
 import com.example.acer.servicebookingsystem.user_home_view.home_view;
 
 import java.util.Timer;
@@ -27,6 +29,8 @@ public class background_services extends Service {
     //location declaration
     LocationManager locationManager;
     String latitude,longitude;
+
+    current_location cl;
 
     //Request code declaration
     private static  final int REQUEST_LOCATION=1;
@@ -44,6 +48,7 @@ public class background_services extends Service {
     public void onCreate() {
         mTimer = new Timer();
         mTimer.schedule(timerTask, 2000, 2*1000);
+        cl = new current_location();
     }
 
     @Override
@@ -136,6 +141,16 @@ public class background_services extends Service {
                 Toast.makeText(this, "Can't Get Your Location", Toast.LENGTH_SHORT).show();
             }
         }
+
+        cl.setLatitude(latitude);
+        cl.setLongitude(longitude);
+
+        //Storing user_id to local
+        SharedPreferences store_user_id = getSharedPreferences("current_user_location", Context.MODE_PRIVATE);
+        SharedPreferences.Editor store_username_editor = store_user_id.edit();
+        store_username_editor.putString("current_latitude",latitude);
+        store_username_editor.putString("current_longitude",longitude);
+        store_username_editor.commit();
 
 
     }

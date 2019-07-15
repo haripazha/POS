@@ -12,5 +12,7 @@ public interface provider_homeContract {
         void onLogout();
         void getUser_details();
 
+        void startServices();
+
     }
 }

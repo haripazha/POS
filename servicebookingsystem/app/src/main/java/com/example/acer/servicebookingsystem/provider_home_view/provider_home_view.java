@@ -76,6 +76,10 @@ menu_service.OnFragmentInteractionListener{
     //run this method when system start
     public void systemStart(){
 
+        //start service
+        presenter.startServices();
+
+
         //getUser details
         presenter.getUser_details();
 

@@ -48,6 +48,13 @@
                 android:text="Service Title" />
 
 
+            <TextView
+                android:id="@+id/service_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:text="Accounting"
+                android:textStyle="italic"/>
 
             <TextView
                 android:id="@+id/service_rate"

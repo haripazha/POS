@@ -82,8 +82,8 @@ public class user_login_view extends AppCompatActivity implements user_login_vie
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                username.getEditText().setText("admin");
-                password.getEditText().setText("admin");
+                //username.getEditText().setText("admin");
+                //password.getEditText().setText("admin");
                 pd.setMessage("Logging In...");
                 pd.show();
                 new Handler().postDelayed(new Runnable() {
